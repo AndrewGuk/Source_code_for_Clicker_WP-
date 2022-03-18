@@ -74,6 +74,11 @@ namespace Types.People
             }
             Console.WriteLine($"I don't fint transport with type <{typeCar}>( ");
         }
+        
+        internal void AddBankAccount(int count)
+        {
+            BankAccount += count;
+        }
 
         
 

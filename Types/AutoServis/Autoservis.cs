@@ -65,6 +65,7 @@ namespace Types.AutoServis
         {
             if (people.BankAccount > transport.Price)
             {
+                people.BuyTransport(transport.Price);
                 people.transports.Add(transport);
                 Console.WriteLine($"Nice! You bought <{transport.ToString().Remove(0,6)}>! Now let's earn more!!");
             }
@@ -93,9 +94,7 @@ namespace Types.AutoServis
             if (people.transports.Contains(transport))
                 {
                     people.transports.Remove(transport);
-                    Console.WriteLine(people.BankAccount);
                     people.SellTransport(transport.Price);
-                    Console.WriteLine(people.BankAccount);
                     Console.WriteLine($"Nice! You sold <{transport.Name}>");
                 }
             else
