@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Types.Interface
 {
-    interface IPeople 
+    interface IPeople  
     {
         string Name { get; set; }
-        void SellTransport(string x);
         void DriveInSea();
         void PrintProperty();
         void Working();

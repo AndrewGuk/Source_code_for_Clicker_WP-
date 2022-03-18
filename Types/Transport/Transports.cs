@@ -1,4 +1,6 @@
-﻿using Types.Interface;
+﻿using System.Collections.ObjectModel;
+using Types.Interface;
+using Types.AutoServis;
 
 
 namespace Types
@@ -6,7 +8,6 @@ namespace Types
     public abstract class Transport : ITransport<Transport>
     {
         string _Name = "Unknow";
-        int _Price = 10000;
         Color _Color = Color.White;
         public string Name
         {
@@ -16,14 +17,7 @@ namespace Types
             }
             get { return _Name; }
         }
-        public int Price
-        {
-            set
-            {
-                value = value == null ? (value = _Price) : _Price = value;
-            }
-            get { return _Price; }
-        }
+        public int Price { get; set; }
         public Color Color
         {
             set
@@ -40,6 +34,7 @@ namespace Types
                 $"\n{Name} costs {Price.ToString()}$" +
                 $"\n{Name} have color - {Color.ToString()}");
         }
+
     }
     public class Car : Transport
     {
@@ -104,4 +99,6 @@ namespace Types
             Price = 25000;
         }
     }
+
 }
+
